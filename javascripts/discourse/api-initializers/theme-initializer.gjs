@@ -1,5 +1,8 @@
-<script type="text/discourse-plugin" version="1.0.0">
-api.decorateCookedElement((elem, helper) => {
+import { apiInitializer } from "discourse/lib/api";
+
+export default apiInitializer((api) => {
+  // Your code here
+  api.decorateCookedElement((elem, helper) => {
     try {
         for (const p of elem.querySelectorAll(":scope > .lightbox-wrapper")) {
             const a = p.querySelector("a.lightbox");
@@ -28,4 +31,4 @@ api.decorateCookedElement((elem, helper) => {
     onlyStream: true,
 });
 
-</script>
+});
